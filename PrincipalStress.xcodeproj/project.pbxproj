@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2343F7671CE1E045005C3A4B /* Tension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2343F7661CE1E045005C3A4B /* Tension.swift */; };
 		23E5B7331CE07AA900907291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B7321CE07AA900907291 /* AppDelegate.swift */; };
 		23E5B7351CE07AA900907291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B7341CE07AA900907291 /* ViewController.swift */; };
 		23E5B7381CE07AA900907291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E5B7361CE07AA900907291 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2343F7661CE1E045005C3A4B /* Tension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tension.swift; sourceTree = "<group>"; };
 		23E5B72F1CE07AA900907291 /* PrincipalStress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincipalStress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E5B7321CE07AA900907291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23E5B7341CE07AA900907291 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2343F7651CE1E01A005C3A4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2343F7661CE1E045005C3A4B /* Tension.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		23E5B7261CE07AA900907291 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		23E5B7311CE07AA900907291 /* PrincipalStress */ = {
 			isa = PBXGroup;
 			children = (
+				2343F7651CE1E01A005C3A4B /* Model */,
 				23E5B7321CE07AA900907291 /* AppDelegate.swift */,
 				23E5B7341CE07AA900907291 /* ViewController.swift */,
 				23E5B7361CE07AA900907291 /* Main.storyboard */,
@@ -198,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E5B7351CE07AA900907291 /* ViewController.swift in Sources */,
+				2343F7671CE1E045005C3A4B /* Tension.swift in Sources */,
 				23E5B7331CE07AA900907291 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +400,7 @@
 				23E5B74E1CE07AAA00907291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23E5B74F1CE07AAA00907291 /* Build configuration list for PBXNativeTarget "PrincipalStressTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +409,7 @@
 				23E5B7511CE07AAA00907291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -50,8 +50,14 @@ class ViewController: UIViewController {
             orderedArray[2] = aux
         }
         
-       
         return orderedArray
     }
-}
 
+    func invariantsCalculation(tension: Tension) -> (Double, Double, Double) {
+        let I1 = tension.x + tension.y + tension.z
+        let I2 = tension.x * tension.y + tension.x * tension.z + tension.y * tension.z - tension.xy * tension.xy - tension.xz * tension.xz - tension.yz * tension.yz
+        let I3 = tension.x * tension.y * tension.z + 2 * tension.xy * tension.yz * tension.xz - tension.xz * tension.y * tension.xz - tension.x * tension.yz * tension.yz - tension.xy * tension.xy * tension.z
+        
+        return (I1, I2, I3)
+    }
+}
