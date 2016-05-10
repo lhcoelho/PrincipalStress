@@ -24,14 +24,34 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    
+    func orderValues(arrayIn: [Double]) -> [Double] {
+        var orderedArray = arrayIn
+        if orderedArray[0] < orderedArray[1] {
+            let aux = orderedArray[0]
+            orderedArray[0] = orderedArray[1]
+            orderedArray[1] = aux
+        }
+        
+        if orderedArray[0] < orderedArray[2] {
+            let aux = orderedArray[0]
+            orderedArray[0] = orderedArray[2]
+            orderedArray[2] = aux
+        }
+        
+        if orderedArray[1] < orderedArray[2] {
+            let aux = orderedArray[1]
+            orderedArray[1] = orderedArray[2]
+            orderedArray[2] = aux
+        }
+        
+       
+        return orderedArray
+    }
 }
 

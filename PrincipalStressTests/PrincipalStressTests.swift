@@ -11,9 +11,12 @@ import XCTest
 
 class PrincipalStressTests: XCTestCase {
     
+    var sut = ViewController()
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        sut = ViewController()
     }
     
     override func tearDown() {
@@ -21,9 +24,36 @@ class PrincipalStressTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testOrderValuesWithZeroZeroZero() {
+        let arrayIn: [Double] = [0, 0, 0]
+        let expectedArray: [Double] = [0, 0, 0]
+        
+        let arrayOut = sut.orderValues(arrayIn)
+        XCTAssertEqual(arrayOut, expectedArray)
+    }
+    
+    func testOrderValuesWith032() {
+        let arrayIn: [Double] = [0, 3, 2]
+        let expectedArray: [Double] = [3, 2, 0]
+        
+        let arrayOut = sut.orderValues(arrayIn)
+        XCTAssertEqual(arrayOut, expectedArray)
+    }
+    
+    func testOrderValuesWith023() {
+        let arrayIn: [Double] = [0, 2, 3]
+        let expectedArray: [Double] = [3, 2, 0]
+        
+        let arrayOut = sut.orderValues(arrayIn)
+        XCTAssertEqual(arrayOut, expectedArray)
+    }
+    
+    func testOrderValuesWith0Minus23() {
+        let arrayIn: [Double] = [0, -2, 3]
+        let expectedArray: [Double] = [3, 0, -2]
+        
+        let arrayOut = sut.orderValues(arrayIn)
+        XCTAssertEqual(arrayOut, expectedArray)
     }
     
     func testPerformanceExample() {
