@@ -60,4 +60,23 @@ class ViewController: UIViewController {
         
         return (I1, I2, I3)
     }
+    
+    func principalStressesCalculation(invariant: (I1: Double, I2: Double, I3: Double)) -> [Double] {
+        if abs(invariant.I1 * invariant.I1 - 3 * invariant.I2) > 0.0001 {
+        let R = (-9 * invariant.I1 * invariant.I2 + 27 * invariant.I3 + 2 * invariant.I1 * invariant.I1 * invariant.I1) / 54
+        let Q = (invariant.I1 * invariant.I1 - 3 * invariant.I2) / 9
+        let theta=acos(R/sqrt(Q*Q*Q))
+        
+        let sigmaP1 = invariant.I1 / 3 + 2 * cos(theta/3) * sqrt(Q)
+        let sigmaP2 = invariant.I1 / 3 + 2*cos(theta/3 + 240*3.14159/180) * sqrt(Q)
+        let sigmaP3 = invariant.I1 / 3 + 2*cos(theta/3 + 120*3.14159/180) * sqrt(Q)
+        let sigmaPOut = orderValues([sigmaP1, sigmaP2, sigmaP3])
+            return sigmaPOut
+        } else {
+            let sigmaPOut = [(invariant.I1)/3, (invariant.I1)/3, (invariant.I1)/3]
+            return sigmaPOut
+        }
+        
+
+    }
 }

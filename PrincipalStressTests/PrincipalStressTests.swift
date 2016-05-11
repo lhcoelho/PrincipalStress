@@ -97,4 +97,61 @@ class PrincipalStressTests: XCTestCase {
         XCTAssertEqual(invariantsOut.1, expectedInvariant.1)
         XCTAssertEqual(invariantsOut.2, expectedInvariant.2)
     }
+    func testPrincipalStresses() {
+        //Arrange
+        let invariant = (I1: 90.0, I2: 2300.0, I3: 15000.0)
+        
+        //Act
+        let sigmaPOut = sut.principalStressesCalculation(invariant)
+        
+        let s1 = 50.0
+        let s2 = 30.0
+        let s3 = 10.0
+        
+        let expectedSigmaP = (s1, s2, s3)
+        //Assert
+        XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
+        
+    }
+    
+    func testPrincipalStressesWith101010() {
+        //Arrange
+        let invariant = (I1: 30.0, I2: 300.0, I3: 1000.0)
+        
+        //Act
+        let sigmaPOut = sut.principalStressesCalculation(invariant)
+        
+        let s1 = 10.0
+        let s2 = 10.0
+        let s3 = 10.0
+        
+        let expectedSigmaP = (s1, s2, s3)
+        //Assert
+        XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
+        
+    }
+    func testPrincipalStressesWithZeros() {
+        //Arrange
+        let invariant = (I1: 0.0, I2: 0.0, I3: 0.0)
+        
+        //Act
+        let sigmaPOut = sut.principalStressesCalculation(invariant)
+        
+        let s1 = 0.0
+        let s2 = 0.0
+        let s3 = 0.0
+        
+        let expectedSigmaP = (s1, s2, s3)
+        //Assert
+        XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
+        
+    }
+
+
 }
