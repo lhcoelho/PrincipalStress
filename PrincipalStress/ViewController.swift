@@ -57,7 +57,6 @@ class ViewController: UIViewController {
         let I1 = tension.x + tension.y + tension.z
         let I2 = tension.x * tension.y + tension.x * tension.z + tension.y * tension.z - tension.xy * tension.xy - tension.xz * tension.xz - tension.yz * tension.yz
         let I3 = tension.x * tension.y * tension.z + 2 * tension.xy * tension.yz * tension.xz - tension.xz * tension.y * tension.xz - tension.x * tension.yz * tension.yz - tension.xy * tension.xy * tension.z
-        
         return (I1, I2, I3)
     }
     
@@ -75,12 +74,10 @@ class ViewController: UIViewController {
             let sigmaPOut = [(invariant.I1)/3, (invariant.I1)/3, (invariant.I1)/3]
             return sigmaPOut
         }
-        
     }
     
     func maxShearStress(sigma: (sigma1: Double, sigma3: Double)) -> (Double) {
         let tauMax = (sigma.sigma1 - sigma.sigma3)/2
-        
         return (tauMax)
     }
 }

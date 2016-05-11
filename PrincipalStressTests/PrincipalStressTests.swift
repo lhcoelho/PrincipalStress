@@ -23,41 +23,53 @@ class PrincipalStressTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    // MARK: - order values
     
+    // MARK: - order values
     func testOrderValuesWithZeroZeroZero() {
+        // arrange
         let arrayIn: [Double] = [0, 0, 0]
-        let expectedArray: [Double] = [0, 0, 0]
-        
+
+        //Act
         let arrayOut = sut.orderValues(arrayIn)
+        
+        //Assert
+        let expectedArray: [Double] = [0, 0, 0]
         XCTAssertEqual(arrayOut, expectedArray)
     }
     
     func testOrderValuesWith032() {
+        // Arrange
         let arrayIn: [Double] = [0, 3, 2]
-        let expectedArray: [Double] = [3, 2, 0]
         
+        //Act
         let arrayOut = sut.orderValues(arrayIn)
+        
+        //Assert
+        let expectedArray: [Double] = [3, 2, 0]
         XCTAssertEqual(arrayOut, expectedArray)
     }
     
     func testOrderValuesWith023() {
+        // arrange
         let arrayIn: [Double] = [0, 2, 3]
-        let expectedArray: [Double] = [3, 2, 0]
         
+        //Act
         let arrayOut = sut.orderValues(arrayIn)
+        
+        //Assert
+        let expectedArray: [Double] = [3, 2, 0]
         XCTAssertEqual(arrayOut, expectedArray)
     }
     
     func testOrderValuesWith0Minus23() {
         // Arrange
         let arrayIn: [Double] = [0, -2, 3]
-        let expectedArray: [Double] = [3, 0, -2]
         
-        // Act
+        //Act
         let arrayOut = sut.orderValues(arrayIn)
         
         // Assert
+        let expectedArray: [Double] = [3, 0, -2]
         XCTAssertEqual(arrayOut, expectedArray)
     }
     
@@ -74,7 +86,6 @@ class PrincipalStressTests: XCTestCase {
         let I2 = 43200.0
         let I3 = 1045000.0
         let expectedInvariant = (I1, I2, I3)
-        
         XCTAssertEqual(invariantsOut.0, expectedInvariant.0)
         XCTAssertEqual(invariantsOut.1, expectedInvariant.1)
         XCTAssertEqual(invariantsOut.2, expectedInvariant.2)
@@ -92,28 +103,26 @@ class PrincipalStressTests: XCTestCase {
         let I2 = 0.0
         let I3 = 0.0
         let expectedInvariant = (I1, I2, I3)
-        
         XCTAssertEqual(invariantsOut.0, expectedInvariant.0)
         XCTAssertEqual(invariantsOut.1, expectedInvariant.1)
         XCTAssertEqual(invariantsOut.2, expectedInvariant.2)
     }
+    
     func testPrincipalStresses() {
         //Arrange
         let invariant = (I1: 90.0, I2: 2300.0, I3: 15000.0)
         
         //Act
         let sigmaPOut = sut.principalStressesCalculation(invariant)
-        
+
+        //Assert
         let s1 = 50.0
         let s2 = 30.0
         let s3 = 10.0
-        
         let expectedSigmaP = (s1, s2, s3)
-        //Assert
         XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
-        
     }
     
     func testPrincipalStressesWith101010() {
@@ -122,17 +131,15 @@ class PrincipalStressTests: XCTestCase {
         
         //Act
         let sigmaPOut = sut.principalStressesCalculation(invariant)
-        
+
+        //Assert
         let s1 = 10.0
         let s2 = 10.0
         let s3 = 10.0
-        
         let expectedSigmaP = (s1, s2, s3)
-        //Assert
         XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
-        
     }
     func testPrincipalStressesWithZeros() {
         //Arrange
@@ -140,35 +147,32 @@ class PrincipalStressTests: XCTestCase {
         
         //Act
         let sigmaPOut = sut.principalStressesCalculation(invariant)
-        
+
+        //Assert
         let s1 = 0.0
         let s2 = 0.0
         let s3 = 0.0
-        
         let expectedSigmaP = (s1, s2, s3)
-        //Assert
         XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
-        
     }
+    
     func testPrincipalStressesWithOneZero() {
         //Arrange
         let invariant = (I1: 20.0, I2: 100.0, I3: 0.0)
         
         //Act
         let sigmaPOut = sut.principalStressesCalculation(invariant)
-        
+
+        //Assert
         let s1 = 10.0
         let s2 = 10.0
         let s3 = 0.0
-        
         let expectedSigmaP = (s1, s2, s3)
-        //Assert
         XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
-        
     }
 
     func testPrincipalStressesWithTwoZeros() {
@@ -177,28 +181,27 @@ class PrincipalStressTests: XCTestCase {
         
         //Act
         let sigmaPOut = sut.principalStressesCalculation(invariant)
-        
+
+        //Assert
         let s1 = 10.0
         let s2 = 0.0
         let s3 = 0.0
-        
         let expectedSigmaP = (s1, s2, s3)
-        //Assert
         XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
-        
     }
     
+    // MARK: - maximum shear stress calculation
     func testMaxShearStress1005() {
         //Arrange
         let sigmaMaxMin = (sigma1: 10.0, sigma3: 5.0)
         
         //Act
         let tauMaxOut = sut.maxShearStress(sigmaMaxMin)
-        let expectedTauMax = 2.5
         
         //Assert
+        let expectedTauMax = 2.5
         XCTAssertEqualWithAccuracy(tauMaxOut, expectedTauMax, accuracy: 0.001)
     }
     
@@ -208,9 +211,9 @@ class PrincipalStressTests: XCTestCase {
         
         //Act
         let tauMaxOut = sut.maxShearStress(sigmaMaxMin)
-        let expectedTauMax = 0.0
         
         //Assert
+        let expectedTauMax = 0.0
         XCTAssertEqualWithAccuracy(tauMaxOut, expectedTauMax, accuracy: 0.001)
     }
     
@@ -220,9 +223,9 @@ class PrincipalStressTests: XCTestCase {
         
         //Act
         let tauMaxOut = sut.maxShearStress(sigmaMaxMin)
-        let expectedTauMax = 15.0
         
         //Assert
+        let expectedTauMax = 15.0
         XCTAssertEqualWithAccuracy(tauMaxOut, expectedTauMax, accuracy: 0.001)
     }
 
