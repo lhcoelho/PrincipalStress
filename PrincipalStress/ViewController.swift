@@ -52,8 +52,12 @@ class ViewController: UIViewController {
         
         return orderedArray
     }
+    
+    func calculatePrincipalStresses(tension: Tension) -> [Double] {
+        return principalStressesCalculation(invariantsCalculation(tension))
+    }
 
-    func invariantsCalculation(tension: Tension) -> (Double, Double, Double) {
+    func invariantsCalculation(tension: Tension) -> (I1: Double, I2: Double, I3: Double) {
         let I1 = tension.x + tension.y + tension.z
         let I2 = tension.x * tension.y + tension.x * tension.z + tension.y * tension.z - tension.xy * tension.xy - tension.xz * tension.xz - tension.yz * tension.yz
         let I3 = tension.x * tension.y * tension.z + 2 * tension.xy * tension.yz * tension.xz - tension.xz * tension.y * tension.xz - tension.x * tension.yz * tension.yz - tension.xy * tension.xy * tension.z
