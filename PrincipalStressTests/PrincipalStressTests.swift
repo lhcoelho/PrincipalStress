@@ -228,5 +228,39 @@ class PrincipalStressTests: XCTestCase {
         let expectedTauMax = 15.0
         XCTAssertEqualWithAccuracy(tauMaxOut, expectedTauMax, accuracy: 0.001)
     }
+    
+    func testPrincipalStressesGivenTensionAllZeros() {
+        // Arrange
+        let tensionIn = Tension(x: 0, y: 0, z: 0, xy: 0, xz: 0, yz: 0)
+        
+        // Act
+        let sigmaPOut = sut.calculatePrincipalStresses(tensionIn)
+        
+        // Assert
+        let s1 = 0.0
+        let s2 = 0.0
+        let s3 = 0.0
+        let expectedSigmaP = (s1, s2, s3)
+        XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
+    }
+    
+    func testPrincipalStressesGivenTensionPrincipals() {
+        // Arrange
+        let tensionIn = Tension(x: 10, y: 20, z: 30, xy: 0, xz: 0, yz: 0)
+        
+        // Act
+        let sigmaPOut = sut.calculatePrincipalStresses(tensionIn)
+        
+        // Assert
+        let s1 = 30.0
+        let s2 = 20.0
+        let s3 = 10.0
+        let expectedSigmaP = (s1, s2, s3)
+        XCTAssertEqualWithAccuracy(sigmaPOut[0], expectedSigmaP.0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[1], expectedSigmaP.1, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
+    }
 
 }
