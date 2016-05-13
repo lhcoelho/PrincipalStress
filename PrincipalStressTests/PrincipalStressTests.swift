@@ -229,6 +229,7 @@ class PrincipalStressTests: XCTestCase {
         XCTAssertEqualWithAccuracy(tauMaxOut, expectedTauMax, accuracy: 0.001)
     }
     
+    // MARK: - Principal Stress calculation
     func testPrincipalStressesGivenTensionAllZeros() {
         // Arrange
         let tensionIn = Tension(x: 0, y: 0, z: 0, xy: 0, xz: 0, yz: 0)
@@ -263,4 +264,67 @@ class PrincipalStressTests: XCTestCase {
         XCTAssertEqualWithAccuracy(sigmaPOut[2], expectedSigmaP.2, accuracy: 0.001)
     }
 
+    // MARK: - String format
+    func testFormatter() {
+        // Arrange
+        let input = 35.321236346
+        
+        // Act
+        let output = sut.getFormattedString(input)
+        
+        // Assert
+        XCTAssertEqual(output, "35.32")
+    }
+    
+    // MARK: - Invalid input data
+    func verifyInvalidInputDataWithNull() {
+        // Arrange
+        let sX = ""
+        let sY = ""
+        let sZ = ""
+        let tXY = ""
+        let tXZ = ""
+        let tYZ = ""
+        
+        //Act
+        let sigmaOut = sut.verifyAndCorrectInvalidInputData([sX, sY, sZ, tXY, tXZ, tYZ])
+        
+        //Assert
+        let expectedSigma = ["0", "0", "0", "0", "0", "0"]
+        XCTAssertEqual(sigmaOut, expectedSigma)
+    }
+    
+    func verifyInvalidInputDataWithMinus() {
+        // Arrange
+        let sX = "-"
+        let sY = "-"
+        let sZ = "-"
+        let tXY = "-"
+        let tXZ = "-"
+        let tYZ = "-"
+        
+        //Act
+        let sigmaOut = sut.verifyAndCorrectInvalidInputData([sX, sY, sZ, tXY, tXZ, tYZ])
+        
+        //Assert
+        let expectedSigma = ["0", "0", "0", "0", "0", "0"]
+        XCTAssertEqual(sigmaOut, expectedSigma)
+    }
+
+    func verifyInvalidInputDataWithMinusNullsNumbers() {
+        // Arrange
+        let sX = "10"
+        let sY = "-"
+        let sZ = "10.0"
+        let tXY = "-"
+        let tXZ = "-"
+        let tYZ = "-"
+        
+        //Act
+        let sigmaOut = sut.verifyAndCorrectInvalidInputData([sX, sY, sZ, tXY, tXZ, tYZ])
+        
+        //Assert
+        let expectedSigma = ["10", "0", "10.0", "0", "0", "0"]
+        XCTAssertEqual(sigmaOut, expectedSigma)
+    }
 }
