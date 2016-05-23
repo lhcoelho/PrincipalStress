@@ -25,11 +25,63 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    @IBAction func calculateButtonPressed(sender: UIButton) {
+        let sigma = readInputData()
+        let stress = verifyAndCorrectInvalidInputData(sigma)
+        let tension = Tension(x: Double(stress[0])!, y: Double(stress[1])!, z: Double(stress[2])!, xy: Double(stress[3])!, xz: Double(stress[4])!, yz: Double(stress[5])!)
+        
+        replaceInvalidInputOnTextFields(stress)
+        calculateAndDisplayResults(tension)
+    }
+    
+    func readInputData() -> [String] {
+        let sX = sigmaX.text
+        let sY = sigmaY.text
+        let sZ = sigmaZ.text
+        let tXY = tauXY.text
+        let tXZ = tauXZ.text
+        let tYZ = tauYZ.text
+        return [sX!, sY!, sZ!, tXY!, tXZ!, tYZ!]
+    }
+    
+    func verifyAndCorrectInvalidInputData(sigma: [String]) -> [String] {
+        var stress = sigma
+        for index in 0...5 {
+            if stress[index] == "" || stress[index] == "-" {
+                stress[index] = "0"
+            }
+        }
+        return stress
+    }
+    
+    func replaceInvalidInputOnTextFields(tension: [String]) {
+        sigmaX.text = tension[0]
+        sigmaY.text = tension[1]
+        sigmaZ.text = tension[2]
+        tauXY.text = tension[3]
+        tauXZ.text = tension[4]
+        tauYZ.text = tension[5]
+    }
+    
+    func calculateAndDisplayResults(tension: Tension) {
+        let sigmaP = calculatePrincipalStresses(tension)
+        let tMax = maxShearStress((sigma1: sigmaP[0], sigma3: sigmaP[2]))
+        
+        sigma1.text = getFormattedString(sigmaP[0])
+        sigma2.text = getFormattedString(sigmaP[1])
+        sigma3.text = getFormattedString(sigmaP[2])
+        tauMax.text = getFormattedString(tMax)
+    }
+    
+    func getFormattedString(value: Double) -> String {
+        return String(format: "%.2f", value)
+    }
+    
     func orderValues(arrayIn: [Double]) -> [Double] {
         var orderedArray = arrayIn
         if orderedArray[0] < orderedArray[1] {
@@ -56,7 +108,7 @@ class ViewController: UIViewController {
     func calculatePrincipalStresses(tension: Tension) -> [Double] {
         return principalStressesCalculation(invariantsCalculation(tension))
     }
-
+    
     func invariantsCalculation(tension: Tension) -> (I1: Double, I2: Double, I3: Double) {
         let I1 = tension.x + tension.y + tension.z
         let I2 = tension.x * tension.y + tension.x * tension.z + tension.y * tension.z - tension.xy * tension.xy - tension.xz * tension.xz - tension.yz * tension.yz
