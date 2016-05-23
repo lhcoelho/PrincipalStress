@@ -24,15 +24,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-                sigmaX.text = "30"
-                sigmaY.text = "40"
-                sigmaZ.text = "50"
-        
-                tauXY.text = "0"
-                tauXZ.text = "0"
-                tauYZ.text = "0"
-        
     }
     
     override func didReceiveMemoryWarning() {
