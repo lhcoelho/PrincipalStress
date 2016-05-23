@@ -85,3 +85,19 @@ class ViewController: UIViewController {
         return (tauMax)
     }
 }
+
+extension ViewController: UITextFieldDelegate {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let oldString = textField.text!
+        let newRange = oldString.startIndex.advancedBy(range.location)..<oldString.startIndex.advancedBy(range.location + range.length)
+        let resultString = oldString.stringByReplacingCharactersInRange(newRange, withString: string)
+        if resultString == "" || resultString == "-" {
+            return true
+        }
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        
+        return formatter.numberFromString(resultString) != nil
+    }
+}
