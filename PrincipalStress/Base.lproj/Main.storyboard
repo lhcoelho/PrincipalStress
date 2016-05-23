@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="30" id="i42-04-9TF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5T4-SJ-Bec"/>
                                 </connections>
@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="30" id="xcW-6p-xva"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="PPd-xL-wDQ"/>
                                 </connections>
@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="width" constant="97" id="ccp-Yr-Eut"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lHI-h8-FQE"/>
                                 </connections>
@@ -61,7 +61,7 @@
                                     <constraint firstAttribute="width" constant="97" id="x52-Il-Hyo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1ZH-dS-MtO"/>
                                 </connections>
@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="height" constant="30" id="YWP-qd-DAG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iIY-Zu-4tc"/>
                                 </connections>
@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="30" id="qp8-7A-qWN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ebc-ba-kzx"/>
                                 </connections>
