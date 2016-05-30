@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateButtonPressed(sender: UIButton) {
+        view.endEditing(true)
         let sigma = readInputData()
         let stress = verifyAndCorrectInvalidInputData(sigma)
         let tension = Tension(x: Double(stress[0])!, y: Double(stress[1])!, z: Double(stress[2])!, xy: Double(stress[3])!, xz: Double(stress[4])!, yz: Double(stress[5])!)
