@@ -225,6 +225,7 @@
                         <outlet property="sigmaX" destination="ShB-4B-e7f" id="27w-hM-4nd"/>
                         <outlet property="sigmaY" destination="PQt-6p-UsU" id="tlu-f3-y3a"/>
                         <outlet property="sigmaZ" destination="vhE-8i-31J" id="ENh-4K-24P"/>
+                        <outlet property="tauLabel" destination="MNH-Xr-0TK" id="2kP-0w-C5c"/>
                         <outlet property="tauMax" destination="uWW-4k-TJu" id="21t-wB-LC4"/>
                         <outlet property="tauXY" destination="VCs-3X-RQf" id="N4R-w3-8zq"/>
                         <outlet property="tauXZ" destination="YH1-mD-Tpx" id="MbV-sK-FQX"/>

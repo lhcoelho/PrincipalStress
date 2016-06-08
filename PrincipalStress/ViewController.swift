@@ -22,8 +22,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var sigma3: UILabel!
     @IBOutlet weak var tauMax: UILabel!
     
+    @IBOutlet weak var tauLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tauLabel.attributedText = getStringWithSubscript("τmax")
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,6 +84,15 @@ class ViewController: UIViewController {
     
     func getFormattedString(value: Double) -> String {
         return String(format: "%.2f", value)
+    }
+    
+    func getStringWithSubscript(string: String) -> NSAttributedString {
+        let font = UIFont.systemFontOfSize(17)
+        let fontSub = UIFont.systemFontOfSize(10)
+        let attString = NSMutableAttributedString(string: string, attributes: [NSFontAttributeName: font])
+        attString.setAttributes([NSFontAttributeName: fontSub, NSBaselineOffsetAttributeName: -3], range: NSRange(location: 1, length: string.characters.count-1))
+
+        return attString
     }
     
     func orderValues(arrayIn: [Double]) -> [Double] {
