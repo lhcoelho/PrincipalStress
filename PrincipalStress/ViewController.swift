@@ -149,6 +149,7 @@ extension ViewController: UITextFieldDelegate {
             return true
         }
         let formatter = NSNumberFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
         formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         
         return formatter.numberFromString(resultString) != nil
