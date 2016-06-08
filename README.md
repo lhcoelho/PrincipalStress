@@ -15,12 +15,12 @@ The app can be dowloaded here: https://itunes.apple.com/br/app/principal-stresse
 #### Version 1.1:
 - UITesting
 - Calculate after typing with no need for calculate button
-- Localization in English and Spanish
 - subscripts for the variables (σx)
-- place label in front of textfield instead of using placeholder
 
 #### Version 1.2:
-- Normal tensions
+- Calculation of the tensions on a given surface
+- Calculation of the principal directions
+- Localization in English and Spanish
 
 #### Version 2:
 - 3D cube
