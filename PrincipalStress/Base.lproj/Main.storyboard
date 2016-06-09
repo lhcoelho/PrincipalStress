@@ -211,8 +211,11 @@
                     </view>
                     <connections>
                         <outlet property="sigma1" destination="gvg-FQ-CYc" id="IXL-bc-Nqc"/>
+                        <outlet property="sigma1Label" destination="Df6-6c-5dl" id="Din-Jc-g4M"/>
                         <outlet property="sigma2" destination="5w3-5G-3aq" id="aRJ-KE-adg"/>
+                        <outlet property="sigma2Label" destination="uRf-3X-8Jk" id="AW7-x5-zsp"/>
                         <outlet property="sigma3" destination="GkA-1g-LAm" id="UhT-cb-HW9"/>
+                        <outlet property="sigma3Label" destination="WOD-SO-77U" id="pJW-xA-f0I"/>
                         <outlet property="sigmaX" destination="ShB-4B-e7f" id="27w-hM-4nd"/>
                         <outlet property="sigmaY" destination="PQt-6p-UsU" id="tlu-f3-y3a"/>
                         <outlet property="sigmaZ" destination="vhE-8i-31J" id="ENh-4K-24P"/>

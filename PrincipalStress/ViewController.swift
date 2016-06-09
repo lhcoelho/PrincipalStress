@@ -23,10 +23,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var tauMax: UILabel!
     
     @IBOutlet weak var tauLabel: UILabel!
+    @IBOutlet weak var sigma1Label: UILabel!
+    @IBOutlet weak var sigma2Label: UILabel!
+    @IBOutlet weak var sigma3Label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tauLabel.attributedText = getStringWithSubscript("τmax")
+        sigma1Label.attributedText = getStringWithSubscript("σ1")
+        sigma2Label.attributedText = getStringWithSubscript("σ2")
+        sigma3Label.attributedText = getStringWithSubscript("σ3")
+        
+        sigmaX.attributedPlaceholder = getStringWithSubscript("σx")
+        sigmaY.attributedPlaceholder = getStringWithSubscript("σy")
+        sigmaZ.attributedPlaceholder = getStringWithSubscript("σz")
+        tauXY.attributedPlaceholder = getStringWithSubscript("τxy")
+        tauXZ.attributedPlaceholder = getStringWithSubscript("τxz")
+        tauYZ.attributedPlaceholder = getStringWithSubscript("τyz")
     }
     
     override func didReceiveMemoryWarning() {
