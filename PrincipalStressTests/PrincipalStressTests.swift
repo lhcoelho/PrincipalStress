@@ -277,7 +277,7 @@ class PrincipalStressTests: XCTestCase {
     }
     
     // MARK: - Invalid input data
-    func verifyInvalidInputDataWithNull() {
+    func testVerifyInvalidInputDataWithNull() {
         // Arrange
         let sX = ""
         let sY = ""
@@ -286,15 +286,16 @@ class PrincipalStressTests: XCTestCase {
         let tXZ = ""
         let tYZ = ""
         
+        var sigma = [sX, sY, sZ, tXY, tXZ, tYZ]
         //Act
-        let sigmaOut = sut.verifyAndCorrectInvalidInputData([sX, sY, sZ, tXY, tXZ, tYZ])
+        sut.verifyAndCorrectInvalidInputData(&sigma)
         
         //Assert
         let expectedSigma = ["0", "0", "0", "0", "0", "0"]
-        XCTAssertEqual(sigmaOut, expectedSigma)
+        XCTAssertEqual(sigma, expectedSigma)
     }
     
-    func verifyInvalidInputDataWithMinus() {
+    func testVerifyInvalidInputDataWithMinus() {
         // Arrange
         let sX = "-"
         let sY = "-"
@@ -303,15 +304,17 @@ class PrincipalStressTests: XCTestCase {
         let tXZ = "-"
         let tYZ = "-"
         
+        var sigma = [sX, sY, sZ, tXY, tXZ, tYZ]
+        
         //Act
-        let sigmaOut = sut.verifyAndCorrectInvalidInputData([sX, sY, sZ, tXY, tXZ, tYZ])
+        sut.verifyAndCorrectInvalidInputData(&sigma)
         
         //Assert
         let expectedSigma = ["0", "0", "0", "0", "0", "0"]
-        XCTAssertEqual(sigmaOut, expectedSigma)
+        XCTAssertEqual(sigma, expectedSigma)
     }
 
-    func verifyInvalidInputDataWithMinusNullsNumbers() {
+    func testVerifyInvalidInputDataWithMinusNullsNumbers() {
         // Arrange
         let sX = "10"
         let sY = "-"
@@ -320,11 +323,13 @@ class PrincipalStressTests: XCTestCase {
         let tXZ = "-"
         let tYZ = "-"
         
+        var sigma = [sX, sY, sZ, tXY, tXZ, tYZ]
+        
         //Act
-        let sigmaOut = sut.verifyAndCorrectInvalidInputData([sX, sY, sZ, tXY, tXZ, tYZ])
+        sut.verifyAndCorrectInvalidInputData(&sigma)
         
         //Assert
         let expectedSigma = ["10", "0", "10.0", "0", "0", "0"]
-        XCTAssertEqual(sigmaOut, expectedSigma)
+        XCTAssertEqual(sigma, expectedSigma)
     }
 }

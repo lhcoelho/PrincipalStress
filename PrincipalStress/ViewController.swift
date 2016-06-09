@@ -33,13 +33,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func calculateButtonPressed(sender: UIButton) {
-        view.endEditing(true)
-        let sigma = readInputData()
-        let stress = verifyAndCorrectInvalidInputData(sigma)
-        let tension = Tension(x: Double(stress[0])!, y: Double(stress[1])!, z: Double(stress[2])!, xy: Double(stress[3])!, xz: Double(stress[4])!, yz: Double(stress[5])!)
+    @IBAction func calculatePrincipalStresses() {
+        var sigma = readInputData()
+         verifyAndCorrectInvalidInputData(&sigma)
+        let tension = Tension(x: Double(sigma[0])!, y: Double(sigma[1])!, z: Double(sigma[2])!, xy: Double(sigma[3])!, xz: Double(sigma[4])!, yz: Double(sigma[5])!)
         
-        replaceInvalidInputOnTextFields(stress)
+//        replaceInvalidInputOnTextFields(sigma)
         calculateAndDisplayResults(tension)
     }
     
@@ -53,14 +52,12 @@ class ViewController: UIViewController {
         return [sX!, sY!, sZ!, tXY!, tXZ!, tYZ!]
     }
     
-    func verifyAndCorrectInvalidInputData(sigma: [String]) -> [String] {
-        var stress = sigma
-        for index in 0...5 {
-            if stress[index] == "" || stress[index] == "-" {
-                stress[index] = "0"
+    func verifyAndCorrectInvalidInputData(inout sigma: [String]) {
+        for index in 0..<sigma.count {
+            if sigma[index] == "" || sigma[index] == "-" {
+                sigma[index] = "0"
             }
         }
-        return stress
     }
     
     func replaceInvalidInputOnTextFields(tension: [String]) {
