@@ -77,7 +77,7 @@ class ViewController: UIViewController {
     }
     
     func calculateAndDisplayResults(tension: Tension) {
-        var sigmaP = calculatePrincipalStresses(tension)
+        let sigmaP = calculatePrincipalStresses(tension)
         let tMax = maxShearStress((sigma1: sigmaP[0], sigma3: sigmaP[2]))
         sigma1.text = getFormattedString(sigmaP[0])
         sigma2.text = getFormattedString(sigmaP[1])
