@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var sigma2Label: UILabel!
     @IBOutlet weak var sigma3Label: UILabel!
     
+    var formatter = NSNumberFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tauLabel.attributedText = getStringWithSubscript("τmax")
@@ -40,6 +42,9 @@ class ViewController: UIViewController {
         tauXY.attributedPlaceholder = getStringWithSubscript("τxy")
         tauXZ.attributedPlaceholder = getStringWithSubscript("τxz")
         tauYZ.attributedPlaceholder = getStringWithSubscript("τyz")
+        
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,9 +164,6 @@ extension ViewController: UITextFieldDelegate {
         if resultString == "" || resultString == "-" {
             return true
         }
-        let formatter = NSNumberFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "en_US")
-        formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         
         return formatter.numberFromString(resultString) != nil
     }
