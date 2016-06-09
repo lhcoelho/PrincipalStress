@@ -13,10 +13,18 @@
 		23E5B7381CE07AA900907291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E5B7361CE07AA900907291 /* Main.storyboard */; };
 		23E5B73A1CE07AA900907291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E5B7391CE07AA900907291 /* Assets.xcassets */; };
 		23E5B7481CE07AAA00907291 /* PrincipalStressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B7471CE07AAA00907291 /* PrincipalStressTests.swift */; };
+		D4032ADD1D09A39E00D4BE79 /* Stresses_3DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4032ADC1D09A39E00D4BE79 /* Stresses_3DUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		23E5B7441CE07AAA00907291 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23E5B7271CE07AA900907291 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23E5B72E1CE07AA900907291;
+			remoteInfo = PrincipalStress;
+		};
+		D4032ADF1D09A39E00D4BE79 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 23E5B7271CE07AA900907291 /* Project object */;
 			proxyType = 1;
@@ -36,6 +44,9 @@
 		23E5B7431CE07AAA00907291 /* PrincipalStressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrincipalStressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E5B7471CE07AAA00907291 /* PrincipalStressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalStressTests.swift; sourceTree = "<group>"; };
 		23E5B7491CE07AAA00907291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4032ADA1D09A39E00D4BE79 /* Stresses 3DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stresses 3DUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4032ADC1D09A39E00D4BE79 /* Stresses_3DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stresses_3DUITests.swift; sourceTree = "<group>"; };
+		D4032ADE1D09A39E00D4BE79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23E5B7401CE07AAA00907291 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4032AD71D09A39E00D4BE79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,6 +87,7 @@
 			children = (
 				23E5B7311CE07AA900907291 /* PrincipalStress */,
 				23E5B7461CE07AAA00907291 /* PrincipalStressTests */,
+				D4032ADB1D09A39E00D4BE79 /* Stresses 3DUITests */,
 				23E5B7301CE07AA900907291 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +97,7 @@
 			children = (
 				23E5B72F1CE07AA900907291 /* PrincipalStress.app */,
 				23E5B7431CE07AAA00907291 /* PrincipalStressTests.xctest */,
+				D4032ADA1D09A39E00D4BE79 /* Stresses 3DUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +122,15 @@
 				23E5B7491CE07AAA00907291 /* Info.plist */,
 			);
 			path = PrincipalStressTests;
+			sourceTree = "<group>";
+		};
+		D4032ADB1D09A39E00D4BE79 /* Stresses 3DUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D4032ADC1D09A39E00D4BE79 /* Stresses_3DUITests.swift */,
+				D4032ADE1D09A39E00D4BE79 /* Info.plist */,
+			);
+			path = "Stresses 3DUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +171,24 @@
 			productReference = 23E5B7431CE07AAA00907291 /* PrincipalStressTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D4032AD91D09A39E00D4BE79 /* Stresses 3DUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4032AE11D09A39E00D4BE79 /* Build configuration list for PBXNativeTarget "Stresses 3DUITests" */;
+			buildPhases = (
+				D4032AD61D09A39E00D4BE79 /* Sources */,
+				D4032AD71D09A39E00D4BE79 /* Frameworks */,
+				D4032AD81D09A39E00D4BE79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4032AE01D09A39E00D4BE79 /* PBXTargetDependency */,
+			);
+			name = "Stresses 3DUITests";
+			productName = "Stresses 3DUITests";
+			productReference = D4032ADA1D09A39E00D4BE79 /* Stresses 3DUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -157,6 +204,10 @@
 						DevelopmentTeam = 6BV2468FFZ;
 					};
 					23E5B7421CE07AAA00907291 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 23E5B72E1CE07AA900907291;
+					};
+					D4032AD91D09A39E00D4BE79 = {
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 23E5B72E1CE07AA900907291;
 					};
@@ -177,6 +228,7 @@
 			targets = (
 				23E5B72E1CE07AA900907291 /* PrincipalStress */,
 				23E5B7421CE07AAA00907291 /* PrincipalStressTests */,
+				D4032AD91D09A39E00D4BE79 /* Stresses 3DUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +244,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23E5B7411CE07AAA00907291 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4032AD81D09A39E00D4BE79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,6 +278,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4032AD61D09A39E00D4BE79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4032ADD1D09A39E00D4BE79 /* Stresses_3DUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -226,6 +293,11 @@
 			isa = PBXTargetDependency;
 			target = 23E5B72E1CE07AA900907291 /* PrincipalStress */;
 			targetProxy = 23E5B7441CE07AAA00907291 /* PBXContainerItemProxy */;
+		};
+		D4032AE01D09A39E00D4BE79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23E5B72E1CE07AA900907291 /* PrincipalStress */;
+			targetProxy = D4032ADF1D09A39E00D4BE79 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -378,6 +450,30 @@
 			};
 			name = Release;
 		};
+		D4032AE21D09A39E00D4BE79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Stresses 3DUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascoelho.Stresses-3DUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PrincipalStress;
+			};
+			name = Debug;
+		};
+		D4032AE31D09A39E00D4BE79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Stresses 3DUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucascoelho.Stresses-3DUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PrincipalStress;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -407,6 +503,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D4032AE11D09A39E00D4BE79 /* Build configuration list for PBXNativeTarget "Stresses 3DUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4032AE21D09A39E00D4BE79 /* Debug */,
+				D4032AE31D09A39E00D4BE79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
