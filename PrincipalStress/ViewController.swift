@@ -37,8 +37,6 @@ class ViewController: UIViewController {
         var sigma = readInputData()
          verifyAndCorrectInvalidInputData(&sigma)
         let tension = Tension(x: Double(sigma[0])!, y: Double(sigma[1])!, z: Double(sigma[2])!, xy: Double(sigma[3])!, xz: Double(sigma[4])!, yz: Double(sigma[5])!)
-        
-//        replaceInvalidInputOnTextFields(sigma)
         calculateAndDisplayResults(tension)
     }
     
@@ -58,15 +56,6 @@ class ViewController: UIViewController {
                 sigma[index] = "0"
             }
         }
-    }
-    
-    func replaceInvalidInputOnTextFields(tension: [String]) {
-        sigmaX.text = tension[0]
-        sigmaY.text = tension[1]
-        sigmaZ.text = tension[2]
-        tauXY.text = tension[3]
-        tauXZ.text = tension[4]
-        tauYZ.text = tension[5]
     }
     
     func calculateAndDisplayResults(tension: Tension) {
