@@ -511,6 +511,7 @@
 				D4032AE31D09A39E00D4BE79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
